@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="./public/initializr/js/vendor/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">     
+         $(document).ajaxSuccess(function() {
+                $("#ausgabe" ).text( "Triggered ajaxSuccess handler." );
+            });
+    </script>
+</head>
+<body>
+    <h1>click me</h1>
+    <div id="ausgabe"></div>
+    <button id="seel">senden</button>
+</body>
+</html>

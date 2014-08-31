@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery autocomplete</title>
+    
+    <link rel="stylesheet" href="public/jquery/jquery-ui-1.11.1.custom/jquery-ui.css" />
+    <link rel="stylesheet" href="public/jquery/jquery-ui-1.11.1.custom/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="public/jquery/jquery-ui-1.11.1.custom/jquery-ui.theme.css" />
+    <script type="text/javascript" src="public/jquery/jquery-ui-1.11.1.custom/external/jquery/jquery.js"></script>
+    <script src="public/jquery/jquery-ui-1.11.1.custom/jquery-ui.js"></script>
+    <style type="text/css">
+        .ui-autocomplete {
+            max-height: 100px;
+            overflow-y: auto;
+            /*prevent orizontal scrollbar*/
+            overflow-x: hidden;
+            
+        }
+        
+        .logging {
+            color: gray;
+            background-color: black;
+            border-bottom: 1px solid white;
+        }
+    
+    </style>
+</head>
+<script>
+/* $(document).ready(function(){
+   $('#states').autocomplete({
+       source: someStates,
+       autoFocus:true
+   });
+});
+*/
+    function log(message){
+        $("<div>").text(message).addClass('logging').prependTo('#log');
+        $('#log').scrollTop(0);
+    }
+    
+    $(function(){
+        var someStates= [
+            "Alabama","Alaska", "Arizona", "California","Delaware","Florida",
+            "Georgia", "Hawaii","Idaho", "Kentucky","Luisiana","Minnesota","Monata",
+            "Montana", "New York", "Oklahoma","South Caroline", "Texas", "Virginia"
+        ];
+        $('#states').autocomplete({
+            source: someStates,
+            autoFocus: true,
+            minLength:2,
+            select: function(event, ui){
+                log(ui.item.value);
+            }
+            
+        });
+    });
+</script>
+<body>
+    <div class="ui-widget" id="main">
+        <label for="states">States:</label>
+        <input id="states" />
+    </div>
+    <br>
+    <div id="log" style="height:200px; width:300px; overflow: auto;" class="ui-widget-content"></div>
+</body>
+</html>
