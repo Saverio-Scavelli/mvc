@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>forms</title>
+		<meta name="description" content="">
+		<meta name="author" content="Saverio Scavelli">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<script src="../public/initializr/js/vendor/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/jquery/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+				$(':submit').click(function(){
+					var error = false;
+					$.each($("input"), function() {
+						if ($(this).val() == "" ) 
+							error = true;
+					});
+					if (error)
+						alert("Stop");
+				});
+			
+			});
+		</script>
+	</head>
+
+	<body>
+		ul#sign_in>li#item*5>a{}
+		<div>
+			<header>
+				<h1>forms</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+
+			<div>
+				<form>
+					<input type="text" name="some_name" value="" id="some_name"/>
+					<input type="submit"  value="submit"/>	
+				</form>
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Saverio Scavelli
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
