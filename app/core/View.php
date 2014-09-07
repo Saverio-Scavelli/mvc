@@ -30,11 +30,11 @@ class View{
      * @param array $data Data made available to the view.
      * @return string The rendered template.
      */
-    public function render(Array $data) {
+    public function render($file, Array $data) {
         extract($data);
 
         ob_start();
-        include( APP_PATH . DIRECTORY_SEPARATOR . $this->template);
+        include( $file . $this->template);
         $content = ob_get_contents();
         ob_end_clean();
         return $content;
